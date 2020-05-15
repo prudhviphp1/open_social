@@ -21,11 +21,12 @@ bundle: photo
 mode: featured
 content:
   field_post:
-    type: text_default
+    type: text_trimmed
     weight: 2
     region: content
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 400
     third_party_settings: {  }
   field_post_image:
     weight: 1

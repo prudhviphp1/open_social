@@ -18,10 +18,11 @@ bundle: post
 mode: featured
 content:
   field_post:
-    type: text_default
+    type: text_trimmed
     weight: 1
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 400
     third_party_settings: {  }
     region: content
   like_and_dislike:

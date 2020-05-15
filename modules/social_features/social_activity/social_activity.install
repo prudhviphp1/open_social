@@ -240,3 +240,19 @@ function social_activity_update_8803() {
   ]);
   EntityViewDisplay::create($display)->save();
 }
+
+/**
+ * Set trimmed format for post in featured view mode.
+ *
+ * @todo: should be moved into social_post module.
+ */
+function social_activity_update_8804() {
+  $config = \Drupal::service('config.factory')
+    ->getEditable('core.entity_view_display.post.post.featured');
+
+  if (!empty($config)) {
+    $config->set('content.field_post.settings', ['trim_length' => 400]);
+    $config->set('content.field_post.type', 'text_trimmed');
+    $config->save();
+  }
+}
